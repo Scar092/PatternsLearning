@@ -1,19 +1,49 @@
-/*This is the first file, that represents the Singleton Pattern*/
+/*This file represents the Singleton Pattern.*/
+
 #include <iostream>
 #include <string>
 
 using namespace std;
 
-class Car {
+class Robot 
+{
 public:
-	void set_model(string mod) {
-		model = mod;
+
+	/*--------------------------------------------------------------------------*/
+	/*						       PUBLIC SECTION                               */
+
+	static Robot &robot()						   	 // creating an object
+	{						 
+		static Robot robocop;
+		return robocop;
 	}
-	string get_model() {
-		return model;
+
+	Robot(const Robot&) = delete;					 // delete copy constructor
+	Robot & operator = (const Robot&) = delete;		 // delete assign operator
+
+	/*                          END OF PUBLIC SECTION                           */
+	/*--------------------------------------------------------------------------*/
+
+	double get_battery_status() 
+	{
+		return battery_status;
 	}
+
+	int get_current_mode() 
+	{
+		return current_mode;
+	}
+
 private:
-	string model;
-	int reg_num;
-	string engine;
+
+	/*--------------------------------------------------------------------------*/
+	/*							  PRIVATE SECTION								*/
+
+	Robot() = default;								 // hide the default constructor
+
+	/*							END OF PRIVATE SECTION							*/
+	/*--------------------------------------------------------------------------*/
+
+	double battery_status{100.00};
+	int current_mode{2};
 };

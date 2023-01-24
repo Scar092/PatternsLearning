@@ -7,10 +7,11 @@ using namespace std;
 
 int main()
 {
-	Car toyota;
-	toyota.set_model("Avensis");
-	cout << toyota.get_model();
-	return 0;
+	/* SINGLETONE */
+	cout << Robot::robot().get_battery_status() << endl;
+
+	auto value = Robot::robot().get_current_mode();
+	cout << value;
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
