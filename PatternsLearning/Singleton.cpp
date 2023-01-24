@@ -1,8 +1,5 @@
 /*This file represents the Singleton Pattern.*/
 
-#include <iostream>
-#include <string>
-
 using namespace std;
 
 class Robot 
