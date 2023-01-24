@@ -1,11 +1,16 @@
 ﻿// PatternsLearning.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
-#include <iostream>
+#include "Singleton.cpp"
+
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	Car toyota;
+	toyota.set_model("Avensis");
+	cout << toyota.get_model();
+	return 0;
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
