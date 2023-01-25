@@ -12,6 +12,12 @@ public:
 	int get_size();			// get size of linked list
 	T& operator[](const int index);			// [] operator overloading (to have access to list elements)
 
+	void push_front(T data);
+	void pop_back();
+	void insert(T value, int index);
+	void removeAt(int index);
+
+
 private:
 
 	template<typename T>
@@ -106,4 +112,25 @@ T & List<T>::operator[](const int index)
 		current = current->pNext;
 		counter++;
 	}
+}
+
+template<typename T>
+void List<T>::push_front(T data)
+{
+
+}
+
+template<typename T>
+void List<T>::pop_back()
+{
+}
+
+template<typename T>
+void List<T>::insert(T value, int index)
+{
+}
+
+template<typename T>
+void List<T>::removeAt(int index)
+{
 }
