@@ -48,4 +48,15 @@ int main()
 	{
 		cout << list[i] << endl;
 	}
+
+	cout << endl << "First element deleted!" << endl;
+	list.pop_front();
+
+	cout << "The size of the list is: " << list.get_size() << endl;
+	cout << "List data:" << endl << endl;
+
+	for (int i = 0; i < list.get_size(); i++)
+	{
+		cout << list[i] << endl;
+	}
 }

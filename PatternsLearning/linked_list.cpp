@@ -6,6 +6,8 @@ public:
 	List();
 	~List();
 
+	void clear();			//clear the linked list
+	void pop_front();			// delete the first linked list element
 	void push_back(T data);			// add element to linked list
 	int get_size();			// get size of linked list
 	T& operator[](const int index);			// [] operator overloading (to have access to list elements)
@@ -40,7 +42,26 @@ List<T>::List()
 template<typename T>
 List<T>::~List()
 {
+	clear();
+	std::cout << std::endl << "The list was deleted! Size = " << size << std::endl;
+}
 
+template<typename T>
+void List<T>::clear()
+{
+	while (size)
+	{
+		pop_front();
+	}
+}
+
+template<typename T>
+void List<T>::pop_front()
+{
+	Node<T> *buffer = first_element;
+	first_element = first_element->pNext;
+	delete buffer;
+	size--;
 }
 
 template<typename T>
